@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
   Link,
-  useNavigate,
   useLocation,
 } from 'react-router-dom'
 
@@ -388,45 +387,9 @@ function ContactPage() {
 }
 
 function ProjectPage({ project }) {
-  const navigate = useNavigate()
-
   return (
-    <div className="project-layout">
-      <aside className="sidebar-shell">
-        <div className="sidebar-card">
-          <button
-            onClick={() => navigate('/')}
-            className="back-button"
-          >
-            ← Back to main page
-          </button>
-
-          <div className="section-eyebrow">Projects</div>
-
-          <div className="sidebar-nav">
-            {projects.map((entry) => (
-              <Link
-                key={entry.slug}
-                to={`/${entry.slug}`}
-                className={
-                  entry.slug === project.slug
-                    ? 'sidebar-link active'
-                    : 'sidebar-link'
-                }
-              >
-                {entry.title}
-              </Link>
-            ))}
-
-            <Link to="/contact" className="sidebar-link">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </aside>
-
-      <div>
-        <section className="project-hero">
+    <div>
+      <section className="project-hero">
           <div className="section-eyebrow accent">
             {project.years}
           </div>
@@ -502,7 +465,6 @@ function ProjectPage({ project }) {
             ))}
           </div>
         </section>
-      </div>
     </div>
   )
 }
