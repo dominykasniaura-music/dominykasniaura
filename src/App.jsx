@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
   Link,
-  useNavigate,
   useLocation,
 } from 'react-router-dom'
 
@@ -473,7 +472,6 @@ function ContactPage() {
 }
 
 function ProjectPage({ project }) {
-  const navigate = useNavigate()
   const performancesByYear = useMemo(() => {
     if (!project.performances?.length) {
       return []
@@ -489,168 +487,133 @@ function ProjectPage({ project }) {
   }, [project.performances])
 
   return (
-    <div className="project-layout">
-      <aside className="sidebar-shell">
-        <div className="sidebar-card">
-          <button
-            onClick={() => navigate('/')}
-            className="back-button"
-          >
-            ← Back to main page
-          </button>
+    <div>
+      <section className="project-hero">
+        <div className="section-eyebrow accent">
+          {project.years}
+        </div>
 
-          <div className="section-eyebrow">Projects</div>
+        <h1 className="project-title">
+          {project.title}
+        </h1>
 
-          <div className="sidebar-nav">
-            {projects.map((entry) => (
-              <Link
-                key={entry.slug}
-                to={`/${entry.slug}`}
-                className={
-                  entry.slug === project.slug
-                    ? 'sidebar-link active'
-                    : 'sidebar-link'
-                }
-              >
-                {entry.title}
-              </Link>
+        <div className="tag-list project-tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="project-intro-grid">
+          <img
+            src={project.hero}
+            alt={project.title}
+            className="project-main-image"
+          />
+
+          <div className="project-copy">
+            {project.intro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
 
-            <Link to="/contact" className="sidebar-link">
-              Contact
-            </Link>
+            <div className="pill-row top-gap">
+              {project.links.map((link) => (
+                <LinkPill key={link.href} {...link} />
+              ))}
+            </div>
           </div>
         </div>
-      </aside>
+      </section>
 
-      <div>
-        <section className="project-hero">
-          <div className="section-eyebrow accent">
-            {project.years}
-          </div>
+      <section className="content-section">
+        <div className="section-title">
+          <h2>Releases</h2>
+        </div>
 
-          <h1 className="project-title">
-            {project.title}
-          </h1>
+        <div className="works-list">
+          {project.works.map((work) => (
+            <article key={work.title} className="work-card">
+              <img
+                src={work.image}
+                alt={work.title}
+                className="work-image"
+              />
 
-          <div className="tag-list project-tags">
-            {project.tags.map((tag) => (
-              <span key={tag} className="tag">
-                {tag}
-              </span>
-            ))}
-          </div>
+              <div>
+                <div className="work-header">
+                  <h4>{work.title}</h4>
 
-          <div className="project-intro-grid">
-            <img
-              src={project.hero}
-              alt={project.title}
-              className="project-main-image"
-            />
+                  <span className="work-meta">
+                    {work.year} · {work.type}
+                  </span>
+                </div>
 
-            <div className="project-copy">
-              {project.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+                <p className="work-text">{work.text}</p>
 
-              <div className="pill-row top-gap">
-                {project.links.map((link) => (
-                  <LinkPill key={link.href} {...link} />
-                ))}
+                <div className="pill-row">
+                  {work.links.map((link) => (
+                    <LinkPill
+                      key={link.href}
+                      {...link}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
+            </article>
+          ))}
+        </div>
+      </section>
 
+      {performancesByYear.length > 0 && (
         <section className="content-section">
           <div className="section-title">
-            <h2>Releases</h2>
+            <h2>Performances</h2>
           </div>
 
-          <div className="works-list">
-            {project.works.map((work) => (
-              <article key={work.title} className="work-card">
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="work-image"
-                />
+          <div className="performances-list">
+            {performancesByYear.map(([year, performances]) => (
+              <div key={year} className="performance-year-group">
+                <div className="performance-year">{year}</div>
 
-                <div>
-                  <div className="work-header">
-                    <h4>{work.title}</h4>
+                <div className="performance-items">
+                  {performances.map((performance) => (
+                    <article
+                      key={`${performance.date}-${performance.title}`}
+                      className="performance-item"
+                    >
+                      <div className="performance-date">
+                        {performance.date}
+                      </div>
 
-                    <span className="work-meta">
-                      {work.year} · {work.type}
-                    </span>
-                  </div>
+                      <div>
+                        {performance.href ? (
+                          <a
+                            href={performance.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="performance-title"
+                          >
+                            {performance.title}
+                          </a>
+                        ) : (
+                          <span className="performance-title">
+                            {performance.title}
+                          </span>
+                        )}
 
-                  <p className="work-text">{work.text}</p>
-
-                  <div className="pill-row">
-                    {work.links.map((link) => (
-                      <LinkPill
-                        key={link.href}
-                        {...link}
-                      />
-                    ))}
-                  </div>
+                        <div className="performance-venue">
+                          {performance.venue}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </section>
-
-        {performancesByYear.length > 0 && (
-          <section className="content-section">
-            <div className="section-title">
-              <h2>Performances</h2>
-            </div>
-
-            <div className="performances-list">
-              {performancesByYear.map(([year, performances]) => (
-                <div key={year} className="performance-year-group">
-                  <div className="performance-year">{year}</div>
-
-                  <div className="performance-items">
-                    {performances.map((performance) => (
-                      <article
-                        key={`${performance.date}-${performance.title}`}
-                        className="performance-item"
-                      >
-                        <div className="performance-date">
-                          {performance.date}
-                        </div>
-
-                        <div>
-                          {performance.href ? (
-                            <a
-                              href={performance.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="performance-title"
-                            >
-                              {performance.title}
-                            </a>
-                          ) : (
-                            <span className="performance-title">
-                              {performance.title}
-                            </span>
-                          )}
-
-                          <div className="performance-venue">
-                            {performance.venue}
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-      </div>
+      )}
     </div>
   )
 }
