@@ -437,6 +437,83 @@ img {
   transform: translateY(-2px);
 }
 
+.performances-list {
+  display: grid;
+  border: 1px solid var(--line);
+  border-radius: 1.8rem;
+  background: var(--panel-soft);
+  backdrop-filter: blur(6px);
+}
+
+.performance-year-group {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  padding: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.performance-year-group:first-child {
+  border-top: 0;
+}
+
+.performance-year {
+  color: var(--accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.performance-items {
+  display: grid;
+}
+
+.performance-item {
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.performance-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.performance-item:last-child {
+  padding-bottom: 0;
+}
+
+.performance-date,
+.performance-venue {
+  color: var(--muted);
+}
+
+.performance-date {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.performance-title {
+  display: inline;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  transition: color 180ms ease;
+}
+
+a.performance-title:hover {
+  color: var(--accent);
+}
+
+.performance-venue {
+  margin-top: 0.28rem;
+  line-height: 1.6;
+}
+
 .media-meta {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -508,7 +585,8 @@ img {
   .work-card,
   .sidebar-card,
   .hero-portrait-shell,
-  .media-card {
+  .media-card,
+  .performances-list {
     border-radius: 1.45rem;
   }
 
@@ -521,5 +599,14 @@ img {
   .bordered-section {
     padding-top: 3rem;
     margin-top: 3rem;
+  }
+
+  .performance-year-group,
+  .performance-item {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-item {
+    gap: 0.35rem;
   }
 }

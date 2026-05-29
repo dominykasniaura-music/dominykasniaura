@@ -103,6 +103,91 @@ const projects = [
         ],
       },
     ],
+    performances: [
+      {
+        year: '2024',
+        date: 'October 25',
+        title: 'dominykas niaura pristato: „bevietystė“',
+        venue: 'Red Cat, Vilnius',
+        href: 'https://www.facebook.com/events/983559240205372',
+      },
+      {
+        year: '2025',
+        date: 'March 25',
+        title: 'Gretos Ambrazaitės skaitymai',
+        venue: 'Kernagis Bar, Vilnius',
+        href: 'https://www.facebook.com/events/1788936348567337',
+      },
+      {
+        year: '2025',
+        date: 'May 8',
+        title: '„Pož(i)eminiai skaitymai XIII: TAS KITAS ŠOPENAS“',
+        venue: 'Aludariai Story Cellar, Vilnius',
+        href: 'https://www.facebook.com/events/684726384298852',
+      },
+      {
+        year: '2025',
+        date: 'May 17',
+        title: 'Gatvės muzikos diena',
+        venue: 'Jono Meko Skersvėjis, Vilnius',
+        href: 'https://www.facebook.com/events/1033675724948076',
+      },
+      {
+        year: '2025',
+        date: 'May 20',
+        title: 'support for Tavare (DE)',
+        venue: 'XI20, Vilnius',
+        href: 'https://www.facebook.com/events/1599373454039821',
+      },
+      {
+        year: '2025',
+        date: 'June 18',
+        title: 'Poezijos ir muzikos performansas „Pro atvirus langus“',
+        venue: 'Signatarų namai, Vilnius',
+        href: 'https://www.facebook.com/events/1810437712850746',
+      },
+      {
+        year: '2025',
+        date: 'July 8',
+        title: 'New Vilnius Review release',
+        venue: 'CAC, Vilnius',
+        href: 'https://www.facebook.com/events/4136286549960894',
+      },
+      {
+        year: '2025',
+        date: 'July 11',
+        title: 'Yaga Gathering Festival',
+        venue: 'Spengla',
+        href: 'https://www.facebook.com/events/2424765631056194',
+      },
+      {
+        year: '2025',
+        date: 'August 14',
+        title: 'Kombinatas Festival',
+        venue: 'Vilkokšnio ež., Grendavė',
+        href: 'https://www.facebook.com/events/569910382206875',
+      },
+      {
+        year: '2025',
+        date: 'September 6',
+        title: 'Skaitymai iš J. Slovackio knygos',
+        venue: 'Knygų mugė, Katedros aikštė, Vilnius',
+      },
+      {
+        year: '2025',
+        date: 'September 13',
+        title: 'Loftas Fest',
+        venue: 'Loftas, Vilnius',
+        href: 'https://www.facebook.com/events/553032677169603',
+      },
+      {
+        year: '2025',
+        date: 'October 27',
+        title: 'Minimal Mondays',
+        venue: 'Draugų vardai, Vilnius',
+        href: 'https://www.facebook.com/events/2252342518617775/',
+      },
+    ],
     media: [],
   },
 
@@ -389,6 +474,19 @@ function ContactPage() {
 
 function ProjectPage({ project }) {
   const navigate = useNavigate()
+  const performancesByYear = useMemo(() => {
+    if (!project.performances?.length) {
+      return []
+    }
+
+    return Object.entries(
+      project.performances.reduce((grouped, performance) => {
+        grouped[performance.year] = grouped[performance.year] || []
+        grouped[performance.year].push(performance)
+        return grouped
+      }, {}),
+    )
+  }, [project.performances])
 
   return (
     <div className="project-layout">
@@ -502,6 +600,56 @@ function ProjectPage({ project }) {
             ))}
           </div>
         </section>
+
+        {performancesByYear.length > 0 && (
+          <section className="content-section">
+            <div className="section-title">
+              <h2>Performances</h2>
+            </div>
+
+            <div className="performances-list">
+              {performancesByYear.map(([year, performances]) => (
+                <div key={year} className="performance-year-group">
+                  <div className="performance-year">{year}</div>
+
+                  <div className="performance-items">
+                    {performances.map((performance) => (
+                      <article
+                        key={`${performance.date}-${performance.title}`}
+                        className="performance-item"
+                      >
+                        <div className="performance-date">
+                          {performance.date}
+                        </div>
+
+                        <div>
+                          {performance.href ? (
+                            <a
+                              href={performance.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="performance-title"
+                            >
+                              {performance.title}
+                            </a>
+                          ) : (
+                            <span className="performance-title">
+                              {performance.title}
+                            </span>
+                          )}
+
+                          <div className="performance-venue">
+                            {performance.venue}
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )
