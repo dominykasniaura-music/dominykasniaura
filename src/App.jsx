@@ -47,7 +47,9 @@ const projects = [
       'Electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design.',
     hero: dominykasPerforming,
     intro: [
-      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions. The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
+      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.' 
+      
+      'The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
     ],
     contact: contactEmail,
     links: [
