@@ -351,7 +351,7 @@ img {
 }
 
 .top-gap {
-  margin-top: 1.4rem;
+  margin-top: 2rem;
 }
 
 .works-list {
@@ -571,7 +571,7 @@ a.performance-title:hover {
 }
 
 .work-text p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1.4rem;
 }
 
 .copy-contact {
