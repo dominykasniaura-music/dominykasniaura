@@ -47,8 +47,7 @@ const projects = [
       'Electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design.',
     hero: dominykasPerforming,
     intro: [
-      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.' 
-      
+      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.',
       'The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
     ],
     contact: contactEmail,
@@ -677,16 +676,38 @@ function ProjectPage({ project }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
 
+            <div className="project-section-nav">
+              <a href="#releases" className="link-pill">
+                Releases
+              </a>
+
+              {project.performances?.length > 0 && (
+                <a href="#performances" className="link-pill">
+                  Performances
+                </a>
+              )}
+
+              {project.media?.length > 0 && (
+                <a href="#media" className="link-pill">
+                  Media
+                </a>
+              )}
+            </div>
+
             <div className="pill-row top-gap">
               {project.links.map((link) => (
                 <LinkPill key={link.href} {...link} />
               ))}
             </div>
+
+            {project.contact && (
+              <CopyEmailButton email={project.contact} />
+            )}
           </div>
         </div>
       </section>
 
-      <section className="content-section">
+      <section id="releases" className="content-section">
         <div className="section-title">
           <h2>Releases</h2>
         </div>
@@ -730,7 +751,7 @@ function ProjectPage({ project }) {
       </section>
 
       {performancesByYear.length > 0 && (
-        <section className="content-section">
+        <section id="performances" className="content-section">
           <div className="section-title">
             <h2>Performances</h2>
           </div>
@@ -780,7 +801,7 @@ function ProjectPage({ project }) {
       )}
 
       {project.media?.length > 0 && (
-        <section className="content-section">
+        <section id="media" className="content-section">
           <div className="section-title">
             <h2>Media</h2>
           </div>
