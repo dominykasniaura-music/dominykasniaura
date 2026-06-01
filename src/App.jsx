@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Routes,
   Route,
@@ -29,6 +29,9 @@ import labasRytasCover from './assets/labas-rytas.jpg'
 import estakadaProfile from './assets/estakada99-profile-photo.png'
 import neurasticCover from './assets/neurastic-soundscapes.jpg'
 import misadventuresCover from './assets/misadventures.jpg'
+import vitalijusReviewImage from './assets/vitalijus-gailius-review.png'
+import emilijaReviewImage from './assets/emilija-visockaite-review.png'
+import borealiscapeReviewImage from './assets/borealiscape-review.png'
 
 const contactEmail = 'dominykas.niaura@gmail.com'
 const instagramUrl = 'https://www.instagram.com/dom.neura/'
@@ -41,14 +44,25 @@ const projects = [
     years: '2018–present',
     tags: ['ambient', 'field recordings', 'trip-hop', 'dub', 'experimental'],
     summary:
-      'Electronic music artist drifting between field recordings, ambient, trip-hop, dub, and experimental music.',
+      'Electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design.',
     hero: dominykasPerforming,
     intro: [
-      'dominykas niaura is an electronic music artist whose work drifts between field recordings, ambient, trip-hop, dub, and experimental music to create soundscapes that feel like entries from a personal journal.',
+      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions. The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
     ],
+    contact: contactEmail,
     links: [
       { label: 'Instagram', href: instagramUrl },
       { label: 'Bandcamp', href: 'https://dominykasniaura.bandcamp.com/' },
+      { label: 'SoundCloud', href: 'https://soundcloud.com/niaura' },
+      {
+        label: 'Spotify',
+        href: 'https://open.spotify.com/artist/61lGgboLfFJYSivn7p41zB?si=7jT65GxnTyuLGFibiN0EVw',
+      },
+      {
+        label: 'Apple Music',
+        href: 'https://music.apple.com/us/artist/dominykas-niaura/1214330878',
+      },
+      { label: 'YouTube', href: 'https://www.youtube.com/@niaurus' },
     ],
     works: [
       {
@@ -56,11 +70,29 @@ const projects = [
         year: '2025',
         type: 'single',
         image: civilizationCover,
-        text: 'A half-hour improvisation built around guitar and effects.',
+        text: [
+          'A half-hour guitar-and-effects improvisation that mutates, unravels, and rebuilds. A soundscape of collapse and renewal, where each new wave buries the last.',
+        ],
         links: [
           {
             label: 'Bandcamp',
             href: 'https://dominykasniaura.bandcamp.com/album/civilization-shmivilization',
+          },
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/9Am6dHZRHUk?si=O-o8oDLYUdkVG5U4',
+          },
+          {
+            label: 'SoundCloud',
+            href: 'https://soundcloud.com/niaura/civilization-shmivilization',
+          },
+          {
+            label: 'Spotify',
+            href: 'https://open.spotify.com/track/0gbqqYcgKqxn1m5XXYBIzV?si=1c85f151cbe94c2f',
+          },
+          {
+            label: 'Apple Music',
+            href: 'https://music.apple.com/gb/song/civilization-shmivilization/1812063660',
           },
         ],
       },
@@ -68,13 +100,39 @@ const projects = [
         title: 'bevietystė',
         year: '2024',
         type: 'album',
+        meta: '2024 · album · Electron Emitter',
         image: bevietysteCover,
-        text:
-          'A bittersweet docu-fictional story through field recordings, ambient, dub, and electronic experiments.',
+        text: [
+          '"bevietystė" ("placelessness") tells a bittersweet docu-fictional story through field recordings, ambient, dub, electronic, and other musical experiments.',
+          'Conceived in 2019, each track is dedicated to a different person, exploring the human condition via themes of mortality, the search for meaning, loneliness, loss, and more.',
+          'The result is a deeply atmospheric piece that plays with the tension between memory, imagination, and the passage of time.',
+          'Mixed & mastered by Electron Transition.',
+          'Released by Electron Emitter (EEM073).',
+        ],
         links: [
           {
             label: 'Bandcamp',
             href: 'https://dominykasniaura.bandcamp.com/album/bevietyst',
+          },
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/hRzDgdEHSkI?si=Qsr3CkAREQkARz93',
+          },
+          {
+            label: 'SoundCloud',
+            href: 'https://soundcloud.com/niaura/sets/bevietyste',
+          },
+          {
+            label: 'Spotify',
+            href: 'https://open.spotify.com/album/3YqrFi8XHFCECg9TrwXRHF?si=hScJUwL3RCCnLSw5cJATQg',
+          },
+          {
+            label: 'Apple Music',
+            href: 'https://music.apple.com/us/album/bevietyst%C4%97/1777521891',
+          },
+          {
+            label: 'Electron Emitter',
+            href: 'https://www.electronemitter.net/artists/dominykas-niaura/',
           },
         ],
       },
@@ -82,22 +140,45 @@ const projects = [
         title: 'Šokis įsuka šviesą',
         year: '2021',
         type: 'poetry soundtrack',
+        meta: '2021 · poetry soundtrack · Bazilisko ambasada',
         image: sokisCover,
-        text:
-          'Poet Ramūnas Liutkevičius performs selected poems with a soundtrack by dominykas niaura.',
-        links: [],
+        text: [
+          'Poet Ramūnas Liutkevičius performs selected poems from his book "Šokis įsuka šviesą" with a soundtrack by dominykas niaura.',
+        ],
+        links: [
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/mnunMsMraj8?si=8QhZ1eKNbhGYtZZU',
+          },
+          {
+            label: 'Bazilisko ambasada',
+            href: 'https://baziliskas.lt/produktas/sokis-isuka-sviesa',
+          },
+        ],
       },
       {
         title: 'palaima',
         year: '2019',
-        type: 'album',
+        type: 'mixtape',
+        meta: '2019 · mixtape',
         image: palaimaCover,
-        text:
-          'A compilation of early songs written between 2017 and 2019.',
+        text: [
+          '"palaima" ("bliss") is a compilation of early songs written, produced, and released chronologically, track by track, between 2017 and 2019.',
+          'All the tracks are sonically bound together by using the closing textures of one piece to serve as the precise foundation for the next.',
+          'Conceived and recorded across Vilnius, Kaunas, Tilburg, Amsterdam, Birštonas, Utrecht, and Paris.',
+        ],
         links: [
           {
             label: 'Bandcamp',
             href: 'https://dominykasniaura.bandcamp.com/album/palaima',
+          },
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/ZjO3YpAETAg?si=hHzchh-4wViEgHWF',
+          },
+          {
+            label: 'SoundCloud',
+            href: 'https://soundcloud.com/niaura/sets/palaima',
           },
         ],
       },
@@ -187,7 +268,47 @@ const projects = [
         href: 'https://www.facebook.com/events/2252342518617775/',
       },
     ],
-    media: [],
+    media: [
+      {
+        type: 'Interview',
+        title: 'Kalba šv. Sultys w/ Dominykas Niaura @ Radio Vilnius',
+        date: '2025.11.12',
+        href: 'https://radiovilnius.live/w-dominykas-niaura/',
+      },
+      {
+        type: 'Review',
+        title: '2024 m. II-ojo pusmečio lietuviškų albumų apžvalga (I dalis) by Vitalijus Gailius',
+        date: '2025.11.03',
+        href: 'https://www.mic.lt/lt/ivykiai/2025/11/03/2024-m-ii-ojo-pusmecio-lietuvisku-albumu-apzvalga-i-dalis/',
+        image: vitalijusReviewImage,
+      },
+      {
+        type: 'Featured',
+        title: 'Music selection Episode 753 by syndae',
+        date: '2025.02.07',
+        href: 'https://www.syndae.de/episodes/1132-episode-753',
+      },
+      {
+        type: 'Featured',
+        title: 'Music selection Episode 745 by syndae',
+        date: '2024.12.13',
+        href: 'https://www.syndae.de/episodes/1123-episode-745',
+      },
+      {
+        type: 'Review',
+        title: 'Borealiscape review of bevietystė',
+        date: '2024.12.08',
+        href: 'https://agier.blogspot.com/2024/12/dominykas-niaura-bevietyste-2024.html',
+        image: borealiscapeReviewImage,
+      },
+      {
+        type: 'Mention',
+        title: 'Emilija + 6 ryškiausi mėnesio albumai (25) on Emilija Visockaitė’s substack "Ausis"',
+        date: '2024.10.26',
+        href: 'https://emilijaviso.substack.com/p/emilija-6-ryskiausi-menesio-albumai',
+        image: emilijaReviewImage,
+      },
+    ],
   },
 
   {
@@ -377,6 +498,43 @@ function LinkPill({ label, href }) {
     </a>
   )
 }
+function CopyEmailButton({ email }) {
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1600)
+    } catch {
+      const fallback = document.createElement('textarea')
+      fallback.value = email
+      document.body.appendChild(fallback)
+      fallback.select()
+      document.execCommand('copy')
+      document.body.removeChild(fallback)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1600)
+    }
+  }
+
+  return (
+    <div className="copy-contact">
+      <span>Contact:</span>
+
+      <button
+        type="button"
+        className="copy-email-button"
+        onClick={copyEmail}
+        aria-label="Copy email address"
+      >
+        <span aria-hidden="true">⧉</span>
+        {copied ? 'Copied' : email}
+      </button>
+    </div>
+  )
+}
+
 
 function HomePage() {
   return (
@@ -545,11 +703,15 @@ function ProjectPage({ project }) {
                   <h4>{work.title}</h4>
 
                   <span className="work-meta">
-                    {work.year} · {work.type}
+                    {work.meta || `${work.year} · ${work.type}`}
                   </span>
                 </div>
 
-                <p className="work-text">{work.text}</p>
+                <div className="work-text">
+                  {(Array.isArray(work.text) ? work.text : [work.text]).map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
 
                 <div className="pill-row">
                   {work.links.map((link) => (
@@ -610,6 +772,43 @@ function ProjectPage({ project }) {
                   ))}
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {project.media?.length > 0 && (
+        <section className="content-section">
+          <div className="section-title">
+            <h2>Media</h2>
+          </div>
+
+          <div className="media-grid">
+            {project.media.map((item) => (
+              <a
+                key={`${item.date}-${item.title}`}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className={item.image ? 'media-card media-card-with-image' : 'media-card'}
+              >
+                {item.image && (
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="media-image"
+                    loading="lazy"
+                  />
+                )}
+
+                <div className="media-card-content">
+                  <div className="media-meta">
+                    {item.type} · {item.date}
+                  </div>
+
+                  <h4>{item.title}</h4>
+                </div>
+              </a>
             ))}
           </div>
         </section>
