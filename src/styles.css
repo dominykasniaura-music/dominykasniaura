@@ -174,11 +174,9 @@ img {
   width: 100%;
   max-width: 300px;
   justify-self: end;
-  border: 0;
-  border-radius: 1.3rem;
-  background: transparent;
-  padding: 0;
-  backdrop-filter: none;
+  border-radius: 1.8rem;
+  background: linear-gradient(180deg, rgba(25, 57, 51, 0.75), rgba(10, 12, 11, 1));
+  padding: 0.9rem;
 }
 
 .hero-portrait,
@@ -635,23 +633,90 @@ a.performance-title:hover {
   }
 }
 
-
-.footer-links .copy-contact {
-  margin-top: 0;
-}
-
-.footer-links .copy-contact > span {
-  display: none;
-}
-
-.footer-links .copy-email-button {
-  padding: 0;
+/* Homepage and contact refinements */
+.hero-portrait-shell {
   border: 0;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+}
+
+.hero-portrait {
+  border: 1px solid var(--line);
+}
+
+.contact-button-row {
+  margin-top: 2rem;
+}
+
+.footer-copy-email {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   color: var(--muted);
 }
 
-.footer-links .copy-email-button:hover {
+.footer-copy-email:hover {
   color: var(--text);
-  background: transparent;
   border-color: transparent;
+  background: transparent;
+}
+
+/* Media image expansion */
+.media-card-with-image {
+  cursor: default;
+}
+
+.media-image-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.media-image-button:hover .media-image {
+  border-color: #2f5a51;
+  filter: grayscale(0);
+}
+
+.media-card-content {
+  display: block;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.image-lightbox-image {
+  max-width: min(100%, 1100px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+}
+
+.image-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid #2a2e2a;
+  border-radius: 999px;
+  background: rgba(15, 17, 16, 0.88);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.image-lightbox-close:hover {
+  border-color: #2f5a51;
+  background: rgba(25, 57, 51, 0.38);
 }
