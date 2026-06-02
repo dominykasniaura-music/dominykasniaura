@@ -174,9 +174,11 @@ img {
   width: 100%;
   max-width: 300px;
   justify-self: end;
-  border-radius: 1.8rem;
-  background: linear-gradient(180deg, rgba(25, 57, 51, 0.75), rgba(10, 12, 11, 1));
-  padding: 0.9rem;
+  border: 0;
+  border-radius: 1.3rem;
+  background: transparent;
+  padding: 0;
+  backdrop-filter: none;
 }
 
 .hero-portrait,
@@ -631,4 +633,25 @@ a.performance-title:hover {
   .media-image {
     aspect-ratio: 16 / 9;
   }
+}
+
+
+.footer-links .copy-contact {
+  margin-top: 0;
+}
+
+.footer-links .copy-contact > span {
+  display: none;
+}
+
+.footer-links .copy-email-button {
+  padding: 0;
+  border: 0;
+  color: var(--muted);
+}
+
+.footer-links .copy-email-button:hover {
+  color: var(--text);
+  background: transparent;
+  border-color: transparent;
 }
