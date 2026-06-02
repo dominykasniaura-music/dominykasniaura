@@ -366,10 +366,10 @@ const projects = [
     title: 'Nneura',
     years: '2016–present',
     tags: ['deep house', 'dub techno', 'leftfield house'],
-    summary: 'outsider inside and out',
+    summary: 'DJ and producer moniker for outsider dance music.',
     hero: nneuraProfile,
     intro: [
-      'Nneura explores house and techno from a more intimate angle.',
+      'DJ and producer moniker for outsider dance music.',
     ],
     links: [
       { label: 'Bandcamp', href: 'https://nneura.bandcamp.com/' },
@@ -553,10 +553,12 @@ function HomePage() {
 
           <div className="pill-row">
             <LinkPill
-              label="Email"
-              href={`mailto:${contactEmail}`}
+              label="Instagram"
+              href={instagramUrl}
             />
           </div>
+
+          <CopyEmailButton email={contactEmail} />
         </div>
 
         <div className="hero-portrait-shell">
@@ -919,9 +921,7 @@ export default function App() {
               Instagram
             </a>
 
-            <a href={`mailto:${contactEmail}`}>
-              Email
-            </a>
+            <CopyEmailButton email={contactEmail} />
           </div>
         </footer>
       </div>
