@@ -32,6 +32,9 @@ import misadventuresCover from './assets/misadventures.jpg'
 import vitalijusReviewImage from './assets/vitalijus-gailius-review.png'
 import emilijaReviewImage from './assets/emilija-visockaite-review.png'
 import borealiscapeReviewImage from './assets/borealiscape-review.png'
+import kalbaSvSultysImage from './assets/kalba-sv-sultys.png'
+import syndae745Image from './assets/syndae-745.png'
+import syndae753Image from './assets/syndae-753.png'
 
 const contactEmail = 'dominykas.niaura@gmail.com'
 const instagramUrl = 'https://www.instagram.com/dom.neura/'
@@ -42,7 +45,7 @@ const projects = [
     navTitle: 'dominykas niaura',
     title: 'dominykas niaura',
     years: '2018–present',
-    tags: ['ambient', 'field recordings', 'trip-hop', 'dub', 'experimental'],
+    tags: ['ambient', 'field recordings', 'trip-hop', 'dub'],
     summary:
       'Electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design.',
     hero: dominykasPerforming,
@@ -275,6 +278,7 @@ const projects = [
         title: 'Kalba šv. Sultys w/ Dominykas Niaura @ Radio Vilnius',
         date: '2025.11.12',
         href: 'https://radiovilnius.live/w-dominykas-niaura/',
+        image: kalbaSvSultysImage,
       },
       {
         type: 'Review',
@@ -288,12 +292,14 @@ const projects = [
         title: 'Music selection Episode 753 by syndae',
         date: '2025.02.07',
         href: 'https://www.syndae.de/episodes/1132-episode-753',
+        image: syndae753Image,
       },
       {
         type: 'Featured',
         title: 'Music selection Episode 745 by syndae',
         date: '2024.12.13',
         href: 'https://www.syndae.de/episodes/1123-episode-745',
+        image: syndae745Image,
       },
       {
         type: 'Review',
@@ -453,9 +459,9 @@ const projects = [
     navTitle: 'estakada99',
     title: 'estakada99',
     years: '2025–present',
-    tags: ['community radio', 'Vilnius'],
+    tags: ['radio', 'community'],
     summary:
-      'Independent online radio station established in Vilnius in 2025.',
+      'Co-founder of independent online community radio station based in Vilnius.',
     hero: estakadaProfile,
     intro: [
       'Independent online radio station broadcasting from studios, homes, and venues across Vilnius and beyond.',
@@ -485,6 +491,25 @@ const projects = [
     ],
     media: [],
   },
+
+  {
+    slug: 'miscellaneous',
+    navTitle: 'Misc',
+    title: 'Miscellaneous',
+    years: '',
+    tags: ['commercials', 'production', 'other'],
+    summary:
+      'Commercial commissions, production work, guest contributions, and other sonic projects.',
+    hero: null,
+    intro: [
+      'Commercial commissions, production work, guest contributions, and other sonic projects.',
+    ],
+    links: [],
+    works: [],
+    media: [],
+    comingSoon: true,
+  },
+
 ]
 
 function LinkPill({ label, href }) {
@@ -499,7 +524,7 @@ function LinkPill({ label, href }) {
     </a>
   )
 }
-function CopyEmailButton({ email }) {
+function CopyEmailButton({ email, className = '' }) {
   const [copied, setCopied] = useState(false)
 
   const copyEmail = async () => {
@@ -520,19 +545,15 @@ function CopyEmailButton({ email }) {
   }
 
   return (
-    <div className="copy-contact">
-      <span>Contact:</span>
-
-      <button
-        type="button"
-        className="copy-email-button"
-        onClick={copyEmail}
-        aria-label="Copy email address"
-      >
-        <span aria-hidden="true">⧉</span>
-        {copied ? 'Copied' : email}
-      </button>
-    </div>
+    <button
+      type="button"
+      className={`copy-email-button ${className}`.trim()}
+      onClick={copyEmail}
+      aria-label="Copy email address"
+    >
+      <span aria-hidden="true">⧉</span>
+      {copied ? 'Copied' : email}
+    </button>
   )
 }
 
@@ -556,9 +577,9 @@ function HomePage() {
               label="Instagram"
               href={instagramUrl}
             />
-          </div>
 
-          <CopyEmailButton email={contactEmail} />
+            <CopyEmailButton email={contactEmail} />
+          </div>
         </div>
 
         <div className="hero-portrait-shell">
@@ -585,7 +606,7 @@ function HomePage() {
               <div className="project-card-top">
                 <div>
                   <h3>{project.title}</h3>
-                  <p>{project.years}</p>
+                  {project.years && <p>{project.years}</p>}
                 </div>
               </div>
 
@@ -617,15 +638,17 @@ function ContactPage() {
         For collaborations, bookings, commissions, or questions, get in touch.
       </p>
 
-      <div className="pill-row">
-        <LinkPill
-          label="Email"
-          href={`mailto:${contactEmail}`}
-        />
+      <div className="pill-row contact-button-row">
+        <CopyEmailButton email={contactEmail} />
 
         <LinkPill
           label="Instagram"
           href={instagramUrl}
+        />
+
+        <LinkPill
+          label="Facebook"
+          href="https://www.facebook.com/domas.ni/"
         />
       </div>
     </section>
@@ -647,12 +670,16 @@ function ProjectPage({ project }) {
     )
   }, [project.performances])
 
+  const [expandedImage, setExpandedImage] = useState(null)
+
   return (
     <div>
       <section className="project-hero">
-        <div className="section-eyebrow accent">
-          {project.years}
-        </div>
+        {project.years && (
+          <div className="section-eyebrow accent">
+            {project.years}
+          </div>
+        )}
 
         <h1 className="project-title">
           {project.title}
@@ -667,34 +694,20 @@ function ProjectPage({ project }) {
         </div>
 
         <div className="project-intro-grid">
-          <img
-            src={project.hero}
-            alt={project.title}
-            className="project-main-image"
-          />
+          {project.hero ? (
+            <img
+              src={project.hero}
+              alt={project.title}
+              className="project-main-image"
+            />
+          ) : (
+            <div className="project-main-image placeholder" aria-hidden="true" />
+          )}
 
           <div className="project-copy">
             {project.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-
-            <div className="project-section-nav">
-              <a href="#releases" className="link-pill">
-                Releases
-              </a>
-
-              {project.performances?.length > 0 && (
-                <a href="#performances" className="link-pill">
-                  Performances
-                </a>
-              )}
-
-              {project.media?.length > 0 && (
-                <a href="#media" className="link-pill">
-                  Media
-                </a>
-              )}
-            </div>
 
             <div className="pill-row top-gap">
               {project.links.map((link) => (
@@ -709,7 +722,16 @@ function ProjectPage({ project }) {
         </div>
       </section>
 
-      <section id="releases" className="content-section">
+      {project.comingSoon && (
+        <section className="content-section">
+          <div className="coming-soon">
+            Coming soon.
+          </div>
+        </section>
+      )}
+
+      {project.works?.length > 0 && (
+        <section id="releases" className="content-section">
         <div className="section-title">
           <h2>Releases</h2>
         </div>
@@ -750,7 +772,8 @@ function ProjectPage({ project }) {
             </article>
           ))}
         </div>
-      </section>
+        </section>
+      )}
 
       {performancesByYear.length > 0 && (
         <section id="performances" className="content-section">
@@ -810,32 +833,67 @@ function ProjectPage({ project }) {
 
           <div className="media-grid">
             {project.media.map((item) => (
-              <a
+              <article
                 key={`${item.date}-${item.title}`}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
                 className={item.image ? 'media-card media-card-with-image' : 'media-card'}
               >
                 {item.image && (
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="media-image"
-                    loading="lazy"
-                  />
+                  <button
+                    type="button"
+                    className="media-image-button"
+                    onClick={() => setExpandedImage(item)}
+                    aria-label={`Expand image for ${item.title}`}
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="media-image"
+                      loading="lazy"
+                    />
+                  </button>
                 )}
 
-                <div className="media-card-content">
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="media-card-content"
+                >
                   <div className="media-meta">
                     {item.type} · {item.date}
                   </div>
 
                   <h4>{item.title}</h4>
-                </div>
-              </a>
+                </a>
+              </article>
             ))}
           </div>
+
+          {expandedImage && (
+            <div
+              className="image-lightbox"
+              role="dialog"
+              aria-modal="true"
+              aria-label={expandedImage.title}
+              onClick={() => setExpandedImage(null)}
+            >
+              <button
+                type="button"
+                className="image-lightbox-close"
+                onClick={() => setExpandedImage(null)}
+                aria-label="Close expanded image"
+              >
+                ×
+              </button>
+
+              <img
+                src={expandedImage.image}
+                alt={expandedImage.title}
+                className="image-lightbox-image"
+                onClick={(event) => event.stopPropagation()}
+              />
+            </div>
+          )}
         </section>
       )}
     </div>
@@ -921,7 +979,7 @@ export default function App() {
               Instagram
             </a>
 
-            <CopyEmailButton email={contactEmail} />
+            <CopyEmailButton email={contactEmail} className="footer-copy-email" />
           </div>
         </footer>
       </div>
