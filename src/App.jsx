@@ -8,6 +8,7 @@ import {
 
 import mainPortrait from './assets/main-page-profile-photo.jpg'
 import dominykasPerforming from './assets/dominykas-performing.jpg'
+import tolstaCover from './assets/tolsta-dominykas-niaura-rework.jpg'
 import palaimaCover from './assets/palaima-2019.jpg'
 import bevietysteCover from './assets/bevietyste-2024.jpg'
 import civilizationCover from './assets/civilization-shmivilization-2025.jpg'
@@ -52,6 +53,7 @@ const projects = [
     intro: [
       'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.',
       'The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
+      "dominykas niaura's works include bevietystė (2024), a concept album released by Electron Emitter; civilization shmivilization (2025), a guitar improvisation recording; Tolsta (dominykas niaura Rework) (2026), a reinterpretation of Sraigės Efektas' track Tolsta; Šokis įsuka šviesa (2021), a soundtrack for a poetry book; and palaima (2018), a mixtape of formative songs.",
     ],
     contact: contactEmail,
     links: [
@@ -69,6 +71,33 @@ const projects = [
       { label: 'YouTube', href: 'https://www.youtube.com/@niaurus' },
     ],
     works: [
+      {
+        title: 'Tolsta (dominykas niaura Rework)',
+        year: '2026',
+        type: 'REMIX',
+        image: tolstaCover,
+        text: [
+          'A rework of "Tolsta" by Sraigės Efektas from their 2026 album Lobomatas.',
+        ],
+        links: [
+          {
+            label: 'Bandcamp',
+            href: 'https://dominykasniaura.bandcamp.com/track/tolsta-dominykas-niaura-rework',
+          },
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/TF5uNNUMxRY?si=l4Y98D0z_waaD88K',
+          },
+          {
+            label: 'SoundCloud',
+            href: 'https://on.soundcloud.com/YsrTyY5r8kyS1F7Dkb',
+          },
+          {
+            label: 'Spotify',
+            href: 'https://open.spotify.com/track/2HS7LpUXtjgaGeAzMuUMk9?si=2383d1b16c94466a',
+          },
+        ],
+      },
       {
         title: 'civilization shmivilization',
         year: '2025',
@@ -110,8 +139,7 @@ const projects = [
           '"bevietystė" ("placelessness") tells a bittersweet docu-fictional story through field recordings, ambient, dub, electronic, and other musical experiments.',
           'Conceived in 2019, each track is dedicated to a different person, exploring the human condition via themes of mortality, the search for meaning, loneliness, loss, and more.',
           'The result is a deeply atmospheric piece that plays with the tension between memory, imagination, and the passage of time.',
-          'Mixed & mastered by Electron Transition.',
-          'Released by Electron Emitter (EEM073).',
+          'Mixed & mastered by Electron Transition. Released by Electron Emitter (EEM073).',
         ],
         links: [
           {
@@ -597,32 +625,51 @@ function HomePage() {
         </div>
 
         <div className="projects-grid">
-          {projects.map((project) => (
-            <Link
-              to={`/${project.slug}`}
-              key={project.slug}
-              className="project-card"
-            >
-              <div className="project-card-top">
-                <div>
-                  <h3>{project.title}</h3>
-                  {project.years && <p>{project.years}</p>}
+          {projects.map((project) => {
+            const cardContent = (
+              <>
+                <div className="project-card-top">
+                  <div>
+                    <h3>{project.title}</h3>
+                    {project.years && <p>{project.years}</p>}
+                  </div>
                 </div>
-              </div>
 
-              <div className="project-card-body">
-                <p>{project.summary}</p>
+                <div className="project-card-body">
+                  <p>{project.summary}</p>
 
-                <div className="tag-list">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="tag-list">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </>
+            )
+
+            if (project.slug === 'dominykas-niaura') {
+              return (
+                <Link
+                  to={`/${project.slug}`}
+                  key={project.slug}
+                  className="project-card"
+                >
+                  {cardContent}
+                </Link>
+              )
+            }
+
+            return (
+              <article
+                key={project.slug}
+                className="project-card project-card-static"
+              >
+                {cardContent}
+              </article>
+            )
+          })}
         </div>
       </section>
     </>
@@ -950,14 +997,16 @@ export default function App() {
           <nav className="top-nav">
             <Link to="/">Home</Link>
 
-            {projects.map((project) => (
-              <Link
-                key={project.slug}
-                to={`/${project.slug}`}
-              >
-                {project.navTitle}
-              </Link>
-            ))}
+            {projects
+              .filter((project) => project.slug === 'dominykas-niaura')
+              .map((project) => (
+                <Link
+                  key={project.slug}
+                  to={`/${project.slug}`}
+                >
+                  {project.navTitle}
+                </Link>
+              ))}
 
             <Link to="/contact">Contact</Link>
           </nav>
