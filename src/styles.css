@@ -720,3 +720,23 @@ a.performance-title:hover {
   border-color: #2f5a51;
   background: rgba(25, 57, 51, 0.38);
 }
+
+/* Requested refinements */
+.project-card-static {
+  cursor: default;
+}
+
+.project-card-static:hover {
+  border-color: var(--line);
+  transform: none;
+  background: var(--panel-soft);
+}
+
+.work-header h4 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.12;
+}
+
+.project-copy > .copy-email-button {
+  margin-top: 1.25rem;
+}
