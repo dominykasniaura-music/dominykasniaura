@@ -689,16 +689,17 @@ function ContactPage() {
           <h1 className="project-title">Contact</h1>
 
           <div className="contact-copy-block">
-            <p className="hero-text contact-text">
-              For collaborations, bookings, commissions, or questions, get in touch.
-            </p>
-
-            <p className="contact-body-text">
-              Available for live performances, media appearances, sound design,
-              production and mixing work, field recording and foley projects, as
-              well as commissions for literature, film, theatre, exhibitions,
-              installations, and other interdisciplinary projects.
-            </p>
+            <ul className="contact-services-list">
+              <li>Live performances</li>
+              <li>Media appearances</li>
+              <li>Sound design</li>
+              <li>Production and mixing work</li>
+              <li>Field recording and foley projects</li>
+              <li>
+                Commissions for literature, film, theatre, exhibitions,
+                installations, and other interdisciplinary projects
+              </li>
+            </ul>
 
             <p className="contact-body-text">
               I usually reply within a day.
@@ -730,16 +731,11 @@ function ContactPage() {
       </div>
 
       <section className="support-section">
-        <div className="section-eyebrow accent">
-          Support
-        </div>
-
-        <h2>Support my work</h2>
+        <h2>Support</h2>
 
         <p>
-          If you'd like to support future releases, field recordings, radio
-          projects, and performances, you can get music on Bandcamp or make a
-          voluntary contribution via Ko-fi or PayPal.
+          If you'd like to support projects, you can purchase my music on
+          Bandcamp or make a voluntary contribution via Ko-fi or PayPal.
         </p>
 
         <div className="pill-row support-button-row">
