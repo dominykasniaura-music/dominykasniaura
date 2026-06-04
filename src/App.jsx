@@ -689,6 +689,9 @@ function ContactPage() {
           <h1 className="project-title">Contact</h1>
 
           <div className="contact-copy-block">
+            <p className="hero-text contact-text">
+              Feel free to get in touch for bookings, collaborations, or questions. Available for:
+            </p>
             <ul className="contact-services-list">
               <li>Live performances</li>
               <li>Media appearances</li>
