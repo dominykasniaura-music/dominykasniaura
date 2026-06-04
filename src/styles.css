@@ -859,3 +859,41 @@ a.performance-title:hover {
     object-position: center;
   }
 }
+
+
+/* Media expand icon */
+.media-image-button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.media-expand-icon {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(236, 232, 222, 0.22);
+  border-radius: 999px;
+  background: rgba(9, 11, 10, 0.68);
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: 0.82;
+  backdrop-filter: blur(5px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.media-image-button:hover .media-expand-icon {
+  opacity: 1;
+  transform: scale(1.04);
+  border-color: rgba(236, 232, 222, 0.42);
+  background: rgba(25, 57, 51, 0.78);
+}
