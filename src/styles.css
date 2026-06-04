@@ -823,3 +823,39 @@ a.performance-title:hover {
     aspect-ratio: 4 / 3;
   }
 }
+
+
+/* Contact page latest refinements */
+.contact-services-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+.contact-services-list li::marker {
+  color: var(--accent);
+}
+
+.support-section h2 {
+  margin: 0 0 1.3rem;
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  line-height: 0.96;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.contact-photo {
+  aspect-ratio: 3 / 4;
+  object-position: 42% center;
+}
+
+@media (max-width: 980px) {
+  .contact-photo {
+    aspect-ratio: 16 / 10;
+    object-position: center;
+  }
+}
