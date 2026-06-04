@@ -740,3 +740,41 @@ a.performance-title:hover {
 .project-copy > .copy-email-button {
   margin-top: 1.25rem;
 }
+
+
+/* Contact page support section */
+.contact-copy-block {
+  display: grid;
+  gap: 1.05rem;
+  margin-top: 1.6rem;
+}
+
+.contact-body-text,
+.support-section p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.contact-page .contact-text {
+  margin-top: 0;
+}
+
+.support-section {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.support-section h2 {
+  margin: 0.9rem 0 1rem;
+  font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.support-button-row {
+  margin-top: 1.6rem;
+}
