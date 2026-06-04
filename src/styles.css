@@ -833,7 +833,7 @@ a.performance-title:hover {
   padding-left: 1.2rem;
   color: var(--muted);
   line-height: 1.7;
-  font-size: 1.02rem;
+  font-size: inherit;
 }
 
 .contact-services-list li::marker {
