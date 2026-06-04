@@ -961,6 +961,10 @@ function ProjectPage({ project }) {
                       className="media-image"
                       loading="lazy"
                     />
+
+                    <span className="media-expand-icon" aria-hidden="true">
+                      ⌕
+                    </span>
                   </button>
                 )}
 
