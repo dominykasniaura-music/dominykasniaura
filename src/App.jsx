@@ -704,7 +704,7 @@ function ContactPage() {
               </li>
             </ul>
 
-            <p className="contact-body-text">
+            <p className="hero-text contact-text">
               I usually reply within a day.
             </p>
           </div>
