@@ -693,7 +693,7 @@ function ContactPage() {
               Feel free to get in touch for bookings, collaborations, or questions.
             </p>
               
-          <p className="contact-body-text">
+          <p className="hero-text contact-text">
             Available for:
           </p>    
             <ul className="contact-services-list">
