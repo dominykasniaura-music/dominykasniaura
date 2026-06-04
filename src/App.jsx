@@ -447,7 +447,7 @@ const projects = [
     slug: 'transactions',
     navTitle: 'Transactions',
     title: 'Transactions',
-    years: '2014–2024',
+    years: '2020–2024',
     tags: ['post-punk', 'indie rock', 'noise rock'],
     summary: 'Four-piece indie post-punk that sounds like no fun.',
     hero: transactionsProfile,
