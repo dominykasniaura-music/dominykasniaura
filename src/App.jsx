@@ -39,6 +39,10 @@ import syndae753Image from './assets/syndae-753.png'
 
 const contactEmail = 'dominykas.niaura@gmail.com'
 const instagramUrl = 'https://www.instagram.com/dom.neura/'
+const facebookUrl = 'https://www.facebook.com/domas.ni/'
+const bandcampUrl = 'https://dominykasniaura.bandcamp.com/'
+const koFiUrl = 'https://ko-fi.com/dominykasniaura'
+const paypalUrl = 'https://paypal.me/dominykasniaura'
 
 const projects = [
   {
@@ -58,7 +62,7 @@ const projects = [
     contact: contactEmail,
     links: [
       { label: 'Instagram', href: instagramUrl },
-      { label: 'Bandcamp', href: 'https://dominykasniaura.bandcamp.com/' },
+      { label: 'Bandcamp', href: bandcampUrl }
       { label: 'SoundCloud', href: 'https://soundcloud.com/niaura' },
       {
         label: 'Spotify',
@@ -524,7 +528,7 @@ const projects = [
     slug: 'miscellaneous',
     navTitle: 'Misc',
     title: 'Miscellaneous',
-    years: '',
+    years: '2005–present',
     tags: ['commercials', 'production', 'other'],
     summary:
       'Commercial commissions, production work, guest contributions, and other sonic projects.',
@@ -681,9 +685,22 @@ function ContactPage() {
     <section className="contact-page">
       <h1 className="project-title">Contact</h1>
 
-      <p className="hero-text contact-text">
-        For collaborations, bookings, commissions, or questions, get in touch.
-      </p>
+      <div className="contact-copy-block">
+        <p className="hero-text contact-text">
+          For collaborations, bookings, commissions, or questions, get in touch.
+        </p>
+
+        <p className="contact-body-text">
+          Available for live performances, media appearances, sound design,
+          production and mixing work, field recording and foley projects, as
+          well as commissions for literature, film, theatre, exhibitions,
+          installations, and other interdisciplinary projects.
+        </p>
+
+        <p className="contact-body-text">
+          I usually reply within a day.
+        </p>
+      </div>
 
       <div className="pill-row contact-button-row">
         <CopyEmailButton email={contactEmail} />
@@ -695,9 +712,40 @@ function ContactPage() {
 
         <LinkPill
           label="Facebook"
-          href="https://www.facebook.com/domas.ni/"
+          href={facebookUrl}
         />
       </div>
+
+      <section className="support-section">
+        <div className="section-eyebrow accent">
+          Support
+        </div>
+
+        <h2>Support my work</h2>
+
+        <p>
+          If you'd like to support future releases, field recordings, radio
+          projects, and performances, you can get music on Bandcamp or make a
+          voluntary contribution via Ko-fi or PayPal.
+        </p>
+
+        <div className="pill-row support-button-row">
+          <LinkPill
+            label="Bandcamp"
+            href={bandcampUrl}
+          />
+
+          <LinkPill
+            label="Ko-fi"
+            href={koFiUrl}
+          />
+
+          <LinkPill
+            label="PayPal"
+            href={paypalUrl}
+          />
+        </div>
+      </section>
     </section>
   )
 }
