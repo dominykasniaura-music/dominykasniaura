@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import mainPortrait from './assets/main-page-profile-photo.jpg'
+import contactPerformancePhoto from './assets/contact-performance-photo.jpg'
 import dominykasPerforming from './assets/dominykas-performing.jpg'
 import tolstaCover from './assets/tolsta-dominykas-niaura-rework.jpg'
 import palaimaCover from './assets/palaima-2019.jpg'
@@ -62,7 +63,7 @@ const projects = [
     contact: contactEmail,
     links: [
       { label: 'Instagram', href: instagramUrl },
-      { label: 'Bandcamp', href: bandcampUrl }
+      { label: 'Bandcamp', href: bandcampUrl },
       { label: 'SoundCloud', href: 'https://soundcloud.com/niaura' },
       {
         label: 'Spotify',
@@ -683,37 +684,49 @@ function HomePage() {
 function ContactPage() {
   return (
     <section className="contact-page">
-      <h1 className="project-title">Contact</h1>
+      <div className="contact-layout">
+        <div className="contact-main">
+          <h1 className="project-title">Contact</h1>
 
-      <div className="contact-copy-block">
-        <p className="hero-text contact-text">
-          For collaborations, bookings, commissions, or questions, get in touch.
-        </p>
+          <div className="contact-copy-block">
+            <p className="hero-text contact-text">
+              For collaborations, bookings, commissions, or questions, get in touch.
+            </p>
 
-        <p className="contact-body-text">
-          Available for live performances, media appearances, sound design,
-          production and mixing work, field recording and foley projects, as
-          well as commissions for literature, film, theatre, exhibitions,
-          installations, and other interdisciplinary projects.
-        </p>
+            <p className="contact-body-text">
+              Available for live performances, media appearances, sound design,
+              production and mixing work, field recording and foley projects, as
+              well as commissions for literature, film, theatre, exhibitions,
+              installations, and other interdisciplinary projects.
+            </p>
 
-        <p className="contact-body-text">
-          I usually reply within a day.
-        </p>
-      </div>
+            <p className="contact-body-text">
+              I usually reply within a day.
+            </p>
+          </div>
 
-      <div className="pill-row contact-button-row">
-        <CopyEmailButton email={contactEmail} />
+          <div className="pill-row contact-button-row">
+            <CopyEmailButton email={contactEmail} />
 
-        <LinkPill
-          label="Instagram"
-          href={instagramUrl}
-        />
+            <LinkPill
+              label="Instagram"
+              href={instagramUrl}
+            />
 
-        <LinkPill
-          label="Facebook"
-          href={facebookUrl}
-        />
+            <LinkPill
+              label="Facebook"
+              href={facebookUrl}
+            />
+          </div>
+        </div>
+
+        <figure className="contact-photo-wrap">
+          <img
+            src={contactPerformancePhoto}
+            alt="Dominykas Niaura performing live"
+            className="contact-photo"
+          />
+        </figure>
       </div>
 
       <section className="support-section">
