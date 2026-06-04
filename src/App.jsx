@@ -741,7 +741,7 @@ function ContactPage() {
         <h2>Support</h2>
 
         <p>
-          If you'd like to support projects, you can purchase my music on
+          If you'd like to support my projects, you can purchase my music on
           Bandcamp or make a voluntary contribution via Ko-fi or PayPal.
         </p>
 
