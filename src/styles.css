@@ -970,7 +970,7 @@ a.performance-title:hover {
 
 .project-card:hover .project-card-bg[style*="nneura-profile-photo"],
 .project-card-static:hover .project-card-bg[style*="nneura-profile-photo"] {
-  opacity: 0.58;
+  opacity: 0.70;
 }
 
 .release-embed {
