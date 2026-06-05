@@ -968,3 +968,12 @@ a.performance-title:hover {
 .project-card-static:hover .project-card-bg[style*="nneura-profile-photo"] {
   opacity: 0.58;
 }
+
+.release-embed {
+  margin: 1.4rem 0 2rem;
+}
+
+.release-embed iframe {
+  display: block;
+  width: 100%;
+}
