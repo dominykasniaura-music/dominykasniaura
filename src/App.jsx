@@ -533,7 +533,7 @@ const projects = [
     tags: ['commercials', 'production', 'other'],
     summary:
       'Commercial commissions, production work, guest contributions, and other sonic projects.',
-    hero: null,
+    hero: contactPerformancePhoto,
     intro: [
       'Commercial commissions, production work, guest contributions, and other sonic projects.',
     ],
