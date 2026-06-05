@@ -739,15 +739,7 @@ function ContactPage() {
             Based in Vilnius, Lithuania. Available internationally for:
           </p>    
             <ul className="contact-services-list">
-              <li>Live performances</li>
-              <li>Media appearances</li>
-              <li>Sound design</li>
-              <li>Production and mixing work</li>
-              <li>Field recording and foley projects</li>
-              <li>
-                Commissions for literature, film, theatre, exhibitions,
-                installations, and other interdisciplinary projects
-              </li>
+              Live performances / media appearances / sound design / production and mixing work / field recording and foley projects / commissions for literature, film, theatre, exhibitions, installations, and other interdisciplinary projects.
             </ul>
 
             <p className="hero-text contact-text">
@@ -783,7 +775,7 @@ function ContactPage() {
         <h2>Support</h2>
 
         <p>
-          If you'd like to support projects, you can purchase my music on
+          If you'd like to support my projects, you can purchase my music on
           Bandcamp or make a voluntary contribution via Ko-fi or PayPal.
         </p>
 
