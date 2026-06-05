@@ -897,3 +897,67 @@ a.performance-title:hover {
   border-color: rgba(236, 232, 222, 0.42);
   background: rgba(25, 57, 51, 0.78);
 }
+
+
+/* Homepage project card image hover */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: grayscale(1) contrast(1.05);
+  transform: scale(1.04);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 11, 10, 0.95), rgba(9, 11, 10, 0.74)),
+    linear-gradient(180deg, rgba(9, 11, 10, 0.25), rgba(9, 11, 10, 0.92));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.project-card:hover .project-card-bg {
+  opacity: 0.28;
+  transform: scale(1);
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card-static:hover .project-card-bg,
+.project-card-static:hover::after {
+  opacity: 0.18;
+}
+
+/* Releases hierarchy */
+.work-meta {
+  opacity: 0.88;
+}
+
+/* Stronger media expand affordance */
+.media-expand-icon {
+  border-color: rgba(236, 232, 222, 0.34);
+  background: rgba(9, 11, 10, 0.78);
+  box-shadow: 0 0.35rem 1.1rem rgba(0, 0, 0, 0.35);
+}
