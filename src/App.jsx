@@ -84,6 +84,14 @@ const projects = [
         text: [
           'A rework of "Tolsta" by Sraigės Efektas from their 2026 album Lobomatas.',
         ],
+        embed: (
+          <iframe
+            style={{ border: 0, width: '100%', height: '120px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=1703048418/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            seamless
+            title="Tolsta (dominykas niaura Rework) Bandcamp player"
+          />
+        ),
         links: [
           {
             label: 'Bandcamp',
@@ -111,6 +119,14 @@ const projects = [
         text: [
           'A half-hour guitar-and-effects improvisation that mutates, unravels, and rebuilds. A soundscape of collapse and renewal, where each new wave buries the last.',
         ],
+        embed: (
+          <iframe
+            style={{ border: 0, width: '100%', height: '120px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=3977386209/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            seamless
+            title="civilization shmivilization Bandcamp player"
+          />
+        ),
         links: [
           {
             label: 'Bandcamp',
@@ -146,6 +162,14 @@ const projects = [
           'The result is a deeply atmospheric piece that plays with the tension between memory, imagination, and the passage of time.',
           'Mixed & mastered by Electron Transition. Released by Electron Emitter (EEM073).',
         ],
+        embed: (
+          <iframe
+            style={{ border: 0, width: '100%', height: '120px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=1518905364/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            seamless
+            title="bevietystė Bandcamp player"
+          />
+        ),
         links: [
           {
             label: 'Bandcamp',
@@ -182,6 +206,18 @@ const projects = [
         text: [
           'Poet Ramūnas Liutkevičius performs selected poems from his book "Šokis įsuka šviesą" with a soundtrack by dominykas niaura.',
         ],
+        embed: (
+          <iframe
+            width="100%"
+            height="360"
+            src="https://www.youtube.com/embed/mnunMsMraj8?si=qxEvwpuri1nM4-1H"
+            title="Šokis įsuka šviesą YouTube player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        ),
         links: [
           {
             label: 'YouTube',
@@ -204,6 +240,14 @@ const projects = [
           'All the tracks are sonically bound together by using the closing textures of one piece to serve as the precise foundation for the next.',
           'Conceived and recorded across Vilnius, Kaunas, Tilburg, Amsterdam, Birštonas, Utrecht, and Paris.',
         ],
+        embed: (
+          <iframe
+            style={{ border: 0, width: '100%', height: '120px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=4030207306/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            seamless
+            title="palaima Bandcamp player"
+          />
+        ),
         links: [
           {
             label: 'Bandcamp',
@@ -880,6 +924,12 @@ function ProjectPage({ project }) {
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
+
+                {work.embed && (
+                  <div className="work-embed">
+                    {work.embed}
+                  </div>
+                )}
 
                 <div className="pill-row">
                   {work.links.map((link) => (
