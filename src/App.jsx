@@ -86,8 +86,8 @@ const projects = [
         ],
         embed: (
           <iframe
-            style={{ border: 0, width: '100%', height: '120px' }}
-            src="https://bandcamp.com/EmbeddedPlayer/track=1703048418/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            style={{ border: 0, width: '100%', height: '42px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=1703048418/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
             seamless
             title="Tolsta (dominykas niaura Rework) Bandcamp player"
           />
@@ -121,8 +121,8 @@ const projects = [
         ],
         embed: (
           <iframe
-            style={{ border: 0, width: '100%', height: '120px' }}
-            src="https://bandcamp.com/EmbeddedPlayer/album=3977386209/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            style={{ border: 0, width: '100%', height: '42px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=3977386209/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
             seamless
             title="civilization shmivilization Bandcamp player"
           />
@@ -164,8 +164,8 @@ const projects = [
         ],
         embed: (
           <iframe
-            style={{ border: 0, width: '100%', height: '120px' }}
-            src="https://bandcamp.com/EmbeddedPlayer/album=1518905364/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            style={{ border: 0, width: '100%', height: '42px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=1518905364/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
             seamless
             title="bevietystė Bandcamp player"
           />
@@ -206,18 +206,6 @@ const projects = [
         text: [
           'Poet Ramūnas Liutkevičius performs selected poems from his book "Šokis įsuka šviesą" with a soundtrack by dominykas niaura.',
         ],
-        embed: (
-          <iframe
-            width="100%"
-            height="360"
-            src="https://www.youtube.com/embed/mnunMsMraj8?si=qxEvwpuri1nM4-1H"
-            title="Šokis įsuka šviesą YouTube player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        ),
         links: [
           {
             label: 'YouTube',
@@ -242,8 +230,8 @@ const projects = [
         ],
         embed: (
           <iframe
-            style={{ border: 0, width: '100%', height: '120px' }}
-            src="https://bandcamp.com/EmbeddedPlayer/album=4030207306/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+            style={{ border: 0, width: '100%', height: '42px' }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=4030207306/size=small/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/"
             seamless
             title="palaima Bandcamp player"
           />
