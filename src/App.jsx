@@ -738,9 +738,9 @@ function ContactPage() {
           <p className="hero-text contact-text">
             Based in Vilnius, Lithuania. Available internationally for:
           </p>    
-            <ul className="contact-services-list">
+            <p className="hero-text contact-text">
               Live performances / media appearances / sound design / production and mixing work / field recording and foley projects / commissions for literature, film, theatre, exhibitions, installations, and other interdisciplinary projects.
-            </ul>
+            </p>
 
             <p className="hero-text contact-text">
               I usually reply within a day.
