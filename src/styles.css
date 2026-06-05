@@ -385,6 +385,7 @@ img {
   display: block;
   padding: 1.25rem;
   border-radius: 1.4rem;
+  min-height: 100%;
   transition:
     border-color 180ms ease,
     background 180ms ease,
@@ -620,6 +621,9 @@ a.performance-title:hover {
 }
 
 .media-card-content {
+  display: block;
+  height: 100%;
+  padding: 0.2rem 0;  
   min-width: 0;
 }
 
@@ -976,4 +980,27 @@ a.performance-title:hover {
 .release-embed iframe {
   display: block;
   width: 100%;
+}
+
+
+/* Media card clickable area */
+.media-card-with-image {
+  align-items: stretch;
+}
+
+.media-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 100%;
+  padding: 0.2rem 0;
+}
+
+.media-card-content:hover h4 {
+  color: var(--text);
+}
+
+.media-card-content:hover .media-meta {
+  color: var(--text);
 }
