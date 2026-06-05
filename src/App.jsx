@@ -633,22 +633,32 @@ function HomePage() {
           {projects.map((project) => {
             const cardContent = (
               <>
-                <div className="project-card-top">
-                  <div>
-                    <h3>{project.title}</h3>
-                    {project.years && <p>{project.years}</p>}
+                {project.hero && (
+                  <span
+                    className="project-card-bg"
+                    style={{ backgroundImage: `url(${project.hero})` }}
+                    aria-hidden="true"
+                  />
+                )}
+
+                <div className="project-card-content">
+                  <div className="project-card-top">
+                    <div>
+                      <h3>{project.title}</h3>
+                      {project.years && <p>{project.years}</p>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="project-card-body">
-                  <p>{project.summary}</p>
+                  <div className="project-card-body">
+                    <p>{project.summary}</p>
 
-                  <div className="tag-list">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="tag">
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="tag-list">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </>
@@ -694,7 +704,7 @@ function ContactPage() {
             </p>
               
           <p className="hero-text contact-text">
-            Available for:
+            Based in Vilnius, Lithuania. Available internationally for:
           </p>    
             <ul className="contact-services-list">
               <li>Live performances</li>
@@ -741,7 +751,7 @@ function ContactPage() {
         <h2>Support</h2>
 
         <p>
-          If you'd like to support my projects, you can purchase my music on
+          If you'd like to support projects, you can purchase my music on
           Bandcamp or make a voluntary contribution via Ko-fi or PayPal.
         </p>
 
@@ -752,13 +762,13 @@ function ContactPage() {
           />
 
           <LinkPill
-            label="Ko-fi"
-            href={koFiUrl}
+            label="PayPal"
+            href={paypalUrl}
           />
 
           <LinkPill
-            label="PayPal"
-            href={paypalUrl}
+            label="Ko-fi"
+            href={koFiUrl}
           />
         </div>
       </section>
