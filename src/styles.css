@@ -958,3 +958,13 @@ a.performance-title:hover {
   background: rgba(9, 11, 10, 0.78);
   box-shadow: 0 0.35rem 1.1rem rgba(0, 0, 0, 0.35);
 }
+
+/* Project-specific hover image visibility */
+.project-card-bg[style*="nneura-profile-photo"] {
+  filter: grayscale(1) contrast(1.14) brightness(1.18);
+}
+
+.project-card:hover .project-card-bg[style*="nneura-profile-photo"],
+.project-card-static:hover .project-card-bg[style*="nneura-profile-photo"] {
+  opacity: 0.58;
+}
