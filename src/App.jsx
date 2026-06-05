@@ -739,7 +739,7 @@ function ContactPage() {
             Based in Vilnius, Lithuania. Available internationally for:
           </p>    
             <p className="hero-text contact-text">
-              Live performances / media appearances / sound design / production and mixing work / field recording and foley projects / commissions for literature, film, theatre, exhibitions, installations, and other interdisciplinary projects.
+              Live performances / media appearances / sound design / production and mixing / field recording and foley projects / commissions for literature, film, theatre, exhibitions, installations, and other interdisciplinary projects.
             </p>
 
             <p className="hero-text contact-text">
