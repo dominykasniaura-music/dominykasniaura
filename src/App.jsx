@@ -914,7 +914,7 @@ function ProjectPage({ project }) {
                 </div>
 
                 {work.embed && (
-                  <div className="work-embed">
+                  <div className="release-embed">
                     {work.embed}
                   </div>
                 )}
