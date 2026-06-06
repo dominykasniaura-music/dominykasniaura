@@ -776,7 +776,7 @@ function ContactPage() {
 
         <p>
           If you'd like to support my projects, you can purchase my music on
-          Bandcamp or make a voluntary contribution via Ko-fi or PayPal.
+          Bandcamp or make a voluntary contribution via PayPal or Ko-fi.
         </p>
 
         <div className="pill-row support-button-row">
