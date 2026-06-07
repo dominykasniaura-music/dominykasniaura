@@ -336,6 +336,27 @@ const projects = [
         venue: 'Draugų vardai, Vilnius',
         href: 'https://www.facebook.com/events/2252342518617775/',
       },
+      {
+        year: '2026',
+        date: 'June 4',
+        title: 'support for Sraigės Efektas (Lobomatas launch)',
+        venue: 'Herkus Kantas, Klaipėda',
+        href: 'https://www.facebook.com/events/1949090585712484/',
+      },
+      {
+        year: '2026',
+        date: 'June 5',
+        title: 'support for Sraigės Efektas (Lobomatas launch)',
+        venue: 'SODAS 2123, Vilnius',
+        href: 'https://www.facebook.com/events/819143967409802/',
+      },
+      {
+        year: '2026',
+        date: 'June 11',
+        title: 'support for Sraigės Efektas (Lobomatas launch)',
+        venue: 'ERDVĖ, Kaunas',
+        href: 'https://www.facebook.com/events/1108673114790171',
+      },
     ],
     media: [
       {
