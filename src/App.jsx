@@ -311,6 +311,13 @@ const projects = [
       },
       {
         year: '2025',
+        date: 'July 14',
+        title: 'KIEMAS LIVE: dominykas niaura',
+        venue: 'Loftas, Vilnius',
+        href: 'https://www.facebook.com/events/661303766369294',
+      },
+      {
+        year: '2025',
         date: 'August 14',
         title: 'Kombinatas Festival',
         venue: 'Vilkokšnio ež., Grendavė',
