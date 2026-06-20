@@ -37,6 +37,10 @@ import borealiscapeReviewImage from './assets/borealiscape-review.png'
 import kalbaSvSultysImage from './assets/kalba-sv-sultys.png'
 import syndae745Image from './assets/syndae-745.png'
 import syndae753Image from './assets/syndae-753.png'
+import isolatedmix95Image from './assets/isolatedmix-95.png'
+import koncertuDienorastis62Image from './assets/koncertu-dienorastis-62.png'
+import literaturaIrMenasInterviewImage from './assets/literatura-ir-menas-interview.png'
+import paviljonoKnyguSavaitgalisLrtImage from './assets/paviljono-knygu-savaitgalis-lrt.png'
 
 const contactEmail = 'dominykas.niaura@gmail.com'
 const instagramUrl = 'https://www.instagram.com/dom.neura/'
@@ -367,6 +371,13 @@ const projects = [
     ],
     media: [
       {
+        type: 'Mention',
+        title: 'Koncertų dienoraštis (62) @ Emilija Visockaitė’s substack "Ausis"',
+        date: '2026.06.14',
+        href: 'https://emilijaviso.substack.com/p/koncertu-dienorastis-62',
+        image: koncertuDienorastis62Image,
+      },
+      {
         type: 'Interview',
         title: 'Kalba šv. Sultys w/ Dominykas Niaura @ Radio Vilnius',
         date: '2025.11.12',
@@ -375,38 +386,59 @@ const projects = [
       },
       {
         type: 'Review',
-        title: '2024 m. II-ojo pusmečio lietuviškų albumų apžvalga (I dalis) by Vitalijus Gailius',
+        title: '2024 m. II-ojo pusmečio lietuviškų albumų apžvalga (I dalis) by Vitalijus Gailius @ mic.lt',
         date: '2025.11.03',
         href: 'https://www.mic.lt/lt/ivykiai/2025/11/03/2024-m-ii-ojo-pusmecio-lietuvisku-albumu-apzvalga-i-dalis/',
         image: vitalijusReviewImage,
       },
       {
         type: 'Featured',
-        title: 'Music selection Episode 753 by syndae',
+        title: 'Music selection "Episode 753" by syndae',
         date: '2025.02.07',
         href: 'https://www.syndae.de/episodes/1132-episode-753',
         image: syndae753Image,
       },
       {
         type: 'Featured',
-        title: 'Music selection Episode 745 by syndae',
+        title: 'Music selection "Episode 745" by syndae',
         date: '2024.12.13',
         href: 'https://www.syndae.de/episodes/1123-episode-745',
         image: syndae745Image,
       },
       {
         type: 'Review',
-        title: 'Borealiscape review of bevietystė',
+        title: 'Borealiscape review of "bevietystė"',
         date: '2024.12.08',
         href: 'https://agier.blogspot.com/2024/12/dominykas-niaura-bevietyste-2024.html',
         image: borealiscapeReviewImage,
       },
       {
         type: 'Mention',
-        title: 'Emilija + 6 ryškiausi mėnesio albumai (25) on Emilija Visockaitė’s substack "Ausis"',
+        title: 'Emilija + 6 ryškiausi mėnesio albumai (25) @ Emilija Visockaitė’s substack "Ausis"',
         date: '2024.10.26',
         href: 'https://emilijaviso.substack.com/p/emilija-6-ryskiausi-menesio-albumai',
         image: emilijaReviewImage,
+      },
+      {
+        type: 'Interview',
+        title: 'Dominykas Niaura: „Muzika suteikia horizontalią panoramą, o tekstas – vertikalę“ @ Literatūra ir menas',
+        date: '2022.05.30',
+        href: 'https://literaturairmenas.lt/muzika/dominykas-niaura-muzika-suteikia-horizontalia-panorama-o-tekstas-vertikale',
+        image: literaturaIrMenasInterviewImage,
+      },
+      {
+        type: 'Mention',
+        title: '„Paviljono“ knygų savaitgalyje – literatūros gurmanų fiesta @ LRT',
+        date: '2021.12.01',
+        href: 'https://www.lrt.lt/naujienos/kultura/12/1554536/paviljono-knygu-savaitgalyje-literaturos-gurmanu-fiesta',
+        image: paviljonoKnyguSavaitgalisLrtImage,
+      },
+      {
+        type: 'Featured',
+        title: 'Music selection "isolatedmix 95 – Sraunus" @ astrangelyisolatedplace',
+        date: '2020.01.12',
+        href: 'https://www.astrangelyisolatedplace.com/blog/2020/1/11/isolatedmix-95-sraunus',
+        image: isolatedmix95Image,
       },
     ],
   },
