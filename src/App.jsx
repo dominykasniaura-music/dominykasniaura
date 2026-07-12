@@ -6,7 +6,7 @@ import {
   useLocation,
 } from 'react-router-dom'
 
-import mainPortrait from './assets/main-page-profile-photo.jpg'
+import mainPortrait from './assets/main-page-profile-photo.png'
 import contactPerformancePhoto from './assets/contact-performance-photo.jpg'
 import dominykasPerforming from './assets/dominykas-performing.png'
 import tolstaCover from './assets/tolsta-dominykas-niaura-rework.jpg'
