@@ -189,7 +189,6 @@ img {
 .hero-portrait {
   width: 100%;
   aspect-ratio: 3 / 4;
-  filter: grayscale(1);
 }
 
 .content-section {
