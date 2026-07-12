@@ -8,7 +8,7 @@ import {
 
 import mainPortrait from './assets/main-page-profile-photo.jpg'
 import contactPerformancePhoto from './assets/contact-performance-photo.jpg'
-import dominykasPerforming from './assets/dominykas-performing.jpg'
+import dominykasPerforming from './assets/dominykas-performing.png'
 import tolstaCover from './assets/tolsta-dominykas-niaura-rework.jpg'
 import palaimaCover from './assets/palaima-2019.jpg'
 import bevietysteCover from './assets/bevietyste-2024.jpg'
