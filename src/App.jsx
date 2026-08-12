@@ -88,7 +88,9 @@ const projects = [
         type: 'REMIX',
         image: tolstaCover,
         text: [
-          'A rework of "Tolsta" by Sraigės Efektas from their 2026 album <em>Lobomatas</em>.',
+          <>
+            'A rework of "Tolsta" by Sraigės Efektas from their 2026 album <em>Lobomatas</em>.',
+          </>,
         ],
         embed: (
           <iframe
