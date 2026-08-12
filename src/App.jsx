@@ -912,8 +912,8 @@ function ProjectPage({ project }) {
           )}
 
           <div className="project-copy">
-            {project.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {project.intro.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
             ))}
 
             <div className="pill-row top-gap">
@@ -962,8 +962,8 @@ function ProjectPage({ project }) {
                 </div>
 
                 <div className="work-text">
-                  {(Array.isArray(work.text) ? work.text : [work.text]).map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                  {(Array.isArray(work.text) ? work.text : [work.text]).map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
                   ))}
                 </div>
 
