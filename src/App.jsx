@@ -60,10 +60,12 @@ const projects = [
       'Electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design.',
     hero: dominykasPerforming,
     intro: [
-      'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.',
-      'The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
-      "dominykas niaura's works include bevietystė (2024), a concept album released by Electron Emitter; civilization shmivilization (2025), a guitar improvisation recording; Tolsta (dominykas niaura Rework) (2026), a reinterpretation of Sraigės Efektas' track Tolsta; Šokis įsuka šviesa (2021), a soundtrack for a poetry book; and palaima (2018), a mixtape of formative songs.",
-    ],
+  'dominykas niaura is an electronic music project blending ambient, field recordings, trip-hop, dub, and experimental sound design into atmospheric and emotionally driven compositions.',
+  'The project explores themes of memory, longing, solitude, and mortality through collage-like production and textured environments with a cinematic feel – intimate and immersive, like pages lifted straight from a personal journal.',
+  <>
+    dominykas niaura's works include: <em>bevietystė</em> (2024), a concept album released by Electron Emitter; <em>civilization shmivilization</em> (2025), a guitar improvisation recording; <em>Tolsta (dominykas niaura Rework)</em> (2026), a reinterpretation of Sraigės Efektas' track; <em>Šokis įsuka šviesa</em> (2021), a soundtrack for a poetry book; and <em>palaima</em> (2018), a mixtape of formative songs.
+  </>,
+],
     contact: contactEmail,
     links: [
       { label: 'Instagram', href: instagramUrl },
