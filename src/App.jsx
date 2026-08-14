@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 import mainPortrait from './assets/main-page-profile-photo.jpg'
-import contactPerformancePhoto from './assets/contact-performance-photo.jpg'
+import contactPerformancePhoto from './assets/contact-performance-photo.png'
 import dominykasPerforming from './assets/dominykas-performing.png'
 import tolstaCover from './assets/tolsta-dominykas-niaura-rework.jpg'
 import palaimaCover from './assets/palaima-2019.jpg'
