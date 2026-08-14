@@ -372,6 +372,13 @@ const projects = [
         venue: 'ERDVĖ, Kaunas',
         href: 'https://www.facebook.com/events/1108673114790171',
       },
+      {
+        year: '2026',
+        date: 'August 13',
+        title: 'Miesto gamtos ir bendruomenės festivalis „Drevės“',
+        venue: 'Ąžuolyno biblioteka, Kaunas',
+        href: 'https://www.facebook.com/events/1570351407893034',
+      },      
     ],
     media: [
       {
