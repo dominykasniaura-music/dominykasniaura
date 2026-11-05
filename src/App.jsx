@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import MiscellaneousPage from './Miscellaneous.jsx'
 import {
   Routes,
   Route,
@@ -1136,6 +1137,7 @@ function RouterView() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/miscellaneous" element={<MiscellaneousPage />} />
 
       <Route
         path="/contact"
